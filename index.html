@@ -9,25 +9,23 @@
   <!-- Fuente Montserrat desde Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
-  <!-- Código del Meta Pixel -->
+  <!-- Meta Pixel Code -->
   <script>
-    !function(f,b,e,v,n,t,s) {
-      if(f.fbq) return; n=f.fbq=function() {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if(!f._fbq) f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
-      n.queue=[]; t=b.createElement(e); t.async=!0;
-      t.src=v; s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)
-    }(window,document,'script','https://connect.facebook.net/es_LA/fbevents.js');
-    fbq('init', '2372161916484346'); // Reemplaza con tu ID de Pixel
-    fbq('track', 'PageView'); // Evento de vista de página
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1190591479116428'); // Reemplaza con tu propio Pixel ID
+    fbq('track', 'PageView'); // Evento PageView para cuando se carga la página
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=2372161916484346&ev=PageView&noscript=1" />
-  </noscript>
-  <!-- Fin del Meta Pixel -->
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1190591479116428&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
   <style>
     body {
@@ -126,9 +124,9 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-logo">
     <h1>🎰 SUPER BONUS ACTIVO 🎰</h1>
     <p>🏆 Encuentra los mejores Sl0ts y atención 24 horas 🏆</p>
-    <a href="https://wa.link/megabonus" class="cta-button" target="_blank" id="botonContactar">
-      🍀 TE ESPERA UN MEGABONUS, ¡HÁBLANOS! 🍀
-    </a>
+    <button id="botónContactar" class="cta-button">
+      🍀 ¡HÁBLANOS PARA EL MEGABONUS! 🍀
+    </button>
   </div>
 
   <!-- Barra fija -->
@@ -146,13 +144,11 @@
     MEGA BONUS todos los derechos reservados.
   </footer>
 
-  <!-- Código JavaScript para registrar el evento "Contact" y mostrar la notificación -->
+  <!-- Código JavaScript para registrar el evento "Contactar" y mostrar la notificación -->
   <script type="text/javascript">
-    document.getElementById('botonContactar').addEventListener('click', function() {
-      fbq('track', 'Contact');  // Evento "Contact" de Pixel
-      setTimeout(function() {
-        window.location.href = "https://wa.link/megabonus";  // Redirección a WhatsApp
-      }, 100);  // Retraso de 100ms antes de redirigir
+    document.getElementById('botónContactar').addEventListener('click', function() {
+      // Evento Meta Pixel "Contactar"
+      fbq('track', 'Contactar');  // Evento "Contactar" de Pixel
 
       // Mostrar la notificación
       document.getElementById('notification').classList.add('show');
@@ -161,6 +157,10 @@
       setTimeout(function() {
         document.getElementById('notification').classList.remove('show');
       }, 5000);
+
+      setTimeout(function() {
+        window.location.href = "https://wa.link/megabonus";  // Redirección a WhatsApp
+      }, 100);  // Retraso de 100ms antes de redirigir
     }, false);
   </script>
 </body>
