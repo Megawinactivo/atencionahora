@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bono de Bienvenida</title>
+
+  <!-- Fuente Montserrat desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Código del Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s) {
+      if(f.fbq) return; n=f.fbq=function() {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if(!f._fbq) f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
+      n.queue=[]; t=b.createElement(e); t.async=!0;
+      t.src=v; s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window,document,'script','https://connect.facebook.net/es_LA/fbevents.js');
+    fbq('init', '2372161916484346'); // Reemplaza con tu ID de Pixel
+    fbq('track', 'PageView'); // Evento de vista de página
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2372161916484346&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- Fin del Meta Pixel -->
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #111b21;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+      max-width: 600px;
+      margin: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    .whatsapp-logo {
+      width: 50px;
+      margin-bottom: 20px;
+    }
+    .cta-button {
+      background-color: #25d366;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #128c7e;
+    }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+      margin-top: 60px;
+      padding-bottom: 80px;
+    }
+
+    /* Estilo para la notificación emergente */
+    .notification {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      border-radius: 5px;
+      display: none;
+      font-weight: bold;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    .notification.show {
+      display: block;
+      animation: fadeIn 2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Contenedor principal -->
+  <div class="container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="whatsapp-logo">
+    <h1>🎰 SUPER BONUS ACTIVO 🎰</h1>
+    <p>🏆 Encuentra los mejores Sl0ts y atención 24 horas 🏆</p>
+    <a href="https://wa.link/megabonus" class="cta-button" target="_blank" id="botonContactar">
+      🍀 TE ESPERA UN MEGABONUS, ¡HÁBLANOS! 🍀
+    </a>
+  </div>
+
+  <!-- Barra fija -->
+  <div class="bono-bar" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #16a34a; color: white; text-align: center; padding: 10px; font-weight: bold;">
+    🎁 ¡Solicítalo ahora por WhatsApp!
+  </div>
+
+  <!-- Notificación emergente -->
+  <div class="notification" id="notification">
+    🎉 ¡Gracias por contactarnos! Tu solicitud ha sido registrada correctamente. 🎉
+  </div>
+
+  <!-- Pie de página -->
+  <footer>
+    MEGA BONUS todos los derechos reservados.
+  </footer>
+
+  <!-- Código JavaScript para registrar el evento "Contact" y mostrar la notificación -->
+  <script type="text/javascript">
+    document.getElementById('botonContactar').addEventListener('click', function() {
+      fbq('track', 'Contact');  // Evento "Contact" de Pixel
+      setTimeout(function() {
+        window.location.href = "https://wa.link/megabonus";  // Redirección a WhatsApp
+      }, 100);  // Retraso de 100ms antes de redirigir
+
+      // Mostrar la notificación
+      document.getElementById('notification').classList.add('show');
+      
+      // Ocultar la notificación después de 5 segundos
+      setTimeout(function() {
+        document.getElementById('notification').classList.remove('show');
+      }, 5000);
+    }, false);
+  </script>
+</body>
+
+</html>
